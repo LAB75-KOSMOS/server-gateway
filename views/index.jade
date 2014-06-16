@@ -1,0 +1,19 @@
+
+extends layout
+
+block content
+	.container.center(style="max-width: 300px;")
+		h1 Login Status
+		.form-group
+		if (!user)
+			p.lead Please login with your credentials.
+			a(href="/login")
+				button.btn.btn-primary Login
+			&nbsp;
+			a(href="/register")
+				button.btn.btn-default Register
+		if (user)
+			p.lead Welcome, #{user.username}
+			a(href="/logout")
+				button.btb.btn-default Logout
+
